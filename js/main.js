@@ -27,8 +27,16 @@ function handleFileSelect() {
 
 function receivedText() {
     document.getElementById('editor').appendChild(document.createTextNode(csvJSON(fr.result)));
-}
+    process(fr.result);
 
+}
+function process(file ){
+    var data={
+        file : file
+    };
+    $.post("process.php", data);
+
+}
 //var csv is the CSV file with headers
 function csvJSON(csv) {
     let lines = csv.split("\n");

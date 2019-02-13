@@ -4,5 +4,8 @@ $password = "vibhor123";
 $host = "85.10.205.173:3306";
 $dbname = "studentrecord";
 
-$link = mysql_connect($hostname, $username, $password);
-mysql_select_db($database) or die('Could not select database');
+$conn = new mysqli($host, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}

@@ -1,18 +1,29 @@
 <?php
+$file  = $_POST['file'];
+echo $file," : File";
+$host = "85.10.205.173:3306";
+$dbusername = "vibhor";
+$dbpassword = "vibhor123";
+$dbname = "studentrecord";
 
-//$json = file_get_contents('php://input');
-//$obj = json_decode($data,true);
-//
-////Database Connection
-//require_once 'db.php';
-//
-///* insert data into DB */
-//foreach($obj as $item) {
-//    mysql_query("INSERT INTO `database name`.`table name` (name, phone, city, email)
-//       VALUES ('".$item['name']."', '".$item['phone']."', '".$item['city']."', '".$item['email']."')");
-//
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+//if($conn)
+//{
+//    echo "Connection Established";
 //}
-////database connection close
-//mysql_close($con);
+//else
+//    echo "connection problem";
 
-//}
+if (mysqli_connect_error()){
+    die('Connect Error ('. mysqli_connect_errno() .') '
+        . mysqli_connect_error());
+}
+else {
+    $sql = "INSERT INTO studentrecord (json) values ('$file')";
+    if ($conn->query($sql)) {
+        echo "New record is inserted sucessfully";
+    } else {
+        echo "Error: " . $sql . "" . $conn->error;
+    }
+    $conn->close();
+}
