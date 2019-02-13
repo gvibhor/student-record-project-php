@@ -16,6 +16,6 @@
 <form action="db.php" method="POST">
 <button type="submit" >ja bc fff</button>
 </form>
-<script src="./js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
