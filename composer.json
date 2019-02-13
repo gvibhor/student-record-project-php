@@ -1,0 +1,30 @@
+{
+  "name": "Vibhor",
+  "description": "Student Record Project",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "auth"
+  ],
+  "authors": [
+    {
+      "name":     "Daniel Azevedo",
+      "email":    "danielazevedo2k12@gmail.com",
+      "homepage": "https://github.com/danganf"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "~5.0",
+    "laravel/framework": "5.6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "BasicStructeMod\\": "src/app/"
+    },
+    "files": [
+      "src/app/Helpers/basic.php"
+    ]
+  }
+}
